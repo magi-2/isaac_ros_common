@@ -24,14 +24,7 @@ DOCKER_ARGS=()
 #
 # CONFIG_IMAGE_KEY (string, can be empty)
 
-if [[ -f "${ROOT}/.isaac_ros_common-config" ]]; then
-    . "${ROOT}/.isaac_ros_common-config"
-fi
-
-# Override with config from user home directory if exists
-if [[ -f ~/.isaac_ros_common-config ]]; then
-    . ~/.isaac_ros_common-config
-fi
+. /home/magi_orin/modalic/autonomy-workspace/.isaac_ros_common-config
 
 # Parse command-line args
 IMAGE_KEY=ros2_humble

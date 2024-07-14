@@ -22,14 +22,7 @@ source $ROOT/utils/print_color.sh
 #
 # CONFIG_BASE_IMAGE_KEY (string, can be empty)
 
-if [[ -f "${ROOT}/.isaac_ros_common-config" ]]; then
-    . "${ROOT}/.isaac_ros_common-config"
-fi
-
-# Override with config from user home directory if exists
-if [[ -f ~/.isaac_ros_common-config ]]; then
-    . ~/.isaac_ros_common-config
-fi
+. /home/magi_orin/modalic/autonomy-workspace/.isaac_ros_common-config
 
 INCLUDE_DIRS=()
 INCLUDE_TARBALLS=()
