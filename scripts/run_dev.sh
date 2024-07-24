@@ -273,12 +273,14 @@ docker run -it --rm \
     --privileged \
     --network host \
     ${DOCKER_ARGS[@]} \
-    -v $ISAAC_ROS_DEV_DIR:/workspaces/isaac_ros-dev \
+    -v $MODALIC_WORKSPACE_REL_PATH:$MODALIC_WORKSPACE_DIR_TARGET \
     -v /etc/localtime:/etc/localtime:ro \
     --name "$CONTAINER_NAME" \
     --runtime nvidia \
     --user="admin" \
     --entrypoint /usr/local/bin/scripts/workspace-entrypoint.sh \
-    --workdir /workspaces/isaac_ros-dev \
+    --workdir $MODALIC_WORKSPACE_DIR_TARGET \
     $BASE_NAME \
     /bin/bash
+
+#--entrypoint $MODALIC_WORKSPACE_DIR_TARGET/ros_graph-entrypoint.sh \
