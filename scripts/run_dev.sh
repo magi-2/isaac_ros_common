@@ -273,7 +273,7 @@ docker run -it --rm \
     --privileged \
     --network host \
     ${DOCKER_ARGS[@]} \
-    -v $MODALIC_WORKSPACE_REL_PATH:$MODALIC_WORKSPACE_DIR_TARGET \
+    -v $MODALIC_WORKSPACE_DIR:$MODALIC_WORKSPACE_DIR_TARGET \
     -v /etc/localtime:/etc/localtime:ro \
     --name "$CONTAINER_NAME" \
     --runtime nvidia \
